@@ -136,18 +136,33 @@ function diagnosePest(type, btnEl) {
 }
 let blindMode = false;
 
+if ("speechSynthesis" in window) {
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+
 function speakText(text) {
   if (!blindMode || !text || !("speechSynthesis" in window)) return;
   window.speechSynthesis.cancel();
-  const cleanText = text.replace(/[\u{1F300}-\u{1FAFF}]/gu, "").trim();
+  const cleanText = text.replace(/[^\p{L}\p{N}\s.,:%()-]/gu, " ").replace(/\s+/g, " ").trim();
   if (!cleanText) return;
 
   const utterance = new SpeechSynthesisUtterance(cleanText);
   const isArabic = /[\u0600-\u06FF]/.test(cleanText);
-  utterance.lang = isArabic ? "ar-EG" : "en-US";
+  const voices = window.speechSynthesis.getVoices();
+  
+  if (isArabic) {
+    utterance.lang = "ar";
+    const arVoice = voices.find(v => v.lang.startsWith("ar"));
+    if (arVoice) utterance.voice = arVoice;
+  } else {
+    utterance.lang = "en-US";
+    const enVoice = voices.find(v => v.lang.startsWith("en"));
+    if (enVoice) utterance.voice = enVoice;
+  }
+
   utterance.volume = 1.0;
   utterance.rate = 0.95;
-  utterance.pitch = 1.0;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -158,8 +173,8 @@ function toggleBlindMode(btn) {
 
   if (blindMode) {
     const msg = currentLang === "ar"
-      ? "تم تفعيل وضع المكفوفين. اضغط على أي نص أو زر لسماعه."
-      : "Blind mode activated. Click any text, number, or button to hear it.";
+      ? "تم تفعيل وضع المكفوفين"
+      : "Blind mode activated";
     speakText(msg);
   } else {
     window.speechSynthesis.cancel();
@@ -167,8 +182,7 @@ function toggleBlindMode(btn) {
 }
 
 document.addEventListener("click", (e) => {
-  if (!blindMode || e.target.id === "blindBtn") return;
-
+  if (!blindMode || e.target.closest("#blindBtn")) return;
   const target = e.target.closest("button, a, h1, h2, h3, h4, p, td, th, li, span, strong, label, .stat, .clean-card");
   if (!target) return;
 
