@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Carbota | Smart Greenhouse Rover</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-brand">
+    <svg viewBox="0 0 48 48" width="38" height="38"><rect x="8" y="16" width="32" height="24" rx="8" fill="#059669"/><circle cx="18" cy="28" r="3.5" fill="#fff"/><circle cx="30" cy="28" r="3.5" fill="#fff"/><line x1="24" y1="16" x2="24" y2="8" stroke="#059669" stroke-width="3"/><path d="M24 8 C24 2, 34 2, 34 8 C34 12, 24 12, 24 8 Z" fill="#10b981"/><path d="M24 10 C24 4, 14 4, 14 10 C14 14, 24 14, 24 10 Z" fill="#34d399"/></svg>
+    <div><strong>CARBOTA</strong><small data-en="Agri-Pneumatic Robotics" data-ar="روبوتات الزراعة الهوائية">Agri-Pneumatic Robotics</small></div>
+  </div>
+  <div class="nav-tabs" id="mainNav">
+    <button class="nav-btn active-box" onclick="openTab('overview', this)" data-en="Overview" data-ar="نظرة عامة">Overview</button>
+    <button class="nav-btn" onclick="openTab('mechanism', this)" data-en="Mechanism" data-ar="الميكانيزم">Mechanism</button>
+    <button class="nav-btn" onclick="openTab('analytics', this)" data-en="📊 Data & ROI" data-ar="📊 البيانات والأرباح">📊 Data & ROI</button>
+    <button class="nav-btn" onclick="openTab('competitors', this)" data-en="Competitors" data-ar="المنافسون">Competitors</button>
+    <button class="nav-btn" onclick="openTab('eco-doctor', this)" data-en="🌿 Eco & Doctor" data-ar="🌿 العيادة والبيئة">🌿 Eco & Doctor</button>
+    <button class="nav-btn" onclick="openTab('future', this)" data-en="🚀 Future" data-ar="🚀 المستقبل">🚀 Future</button>
+    <button class="nav-btn" onclick="openTab('remote', this)" data-en="🎮 Remote" data-ar="🎮 الريموت">🎮 Remote</button>
+    <button class="nav-btn" onclick="openTab('poster-qr', this)" data-en="QR" data-ar="كود QR">QR</button>
+  </div>
+  <div class="nav-actions">
+    <button onclick="toggleLang(this)" id="langBtn">عربي</button>
+    <button onclick="toggleTheme(this)" id="themeBtn" data-en="🌙 Dark" data-ar="🌙 ليلي">🌙 Dark</button>
+  </div>
+</nav>
+
+<main class="app-container">
+  <section id="overview" class="tab-view active-view">
+    <div class="hero-split">
+      <div class="hero-text">
+        <span class="pill" data-en="🏆 Sustainable Greenhouse Robotics" data-ar="🏆 ابتكار روبوتات الصوب المستدامة">🏆 Sustainable Greenhouse Robotics</span>
+        <h1 data-en="Carbota: CO2-Driven Autonomous Mini-Robot" data-ar="كاربوتا: روبوت مصغر يعمل بالدفع الهوائي لغاز CO2">Carbota: CO2-Driven Autonomous Mini-Robot</h1>
+        <p data-en="Replacing 24W–80W electric pumps with regulated CO2 pressure to atomize organic Neem Oil & Potassium Soap—saving 87.5% spraying energy while boosting photosynthesis." data-ar="استبدال مضخات المياه الكهربائية بضغط غاز CO2 المنظم لتذرير زيت النيم والصابون البوتاسي عضوياً—مما يوفر 87.5% من طاقة الرش ويعزز البناء الضوئي.">Replacing 24W–80W electric pumps with regulated CO2 pressure to atomize organic Neem Oil & Potassium Soap—saving 87.5% spraying energy while boosting photosynthesis.</p>
+        <div class="hero-actions">
+          <button class="btn-solid" onclick="openTab('analytics', document.querySelectorAll('.nav-btn'))" data-en="📊 Data & ROI Simulator" data-ar="📊 محاكي البيانات والأرباح">📊 Data & ROI Simulator</button>
+          <button class="btn-soft" onclick="openTab('remote', document.querySelectorAll('.nav-btn'))" data-en="🎮 Live Remote" data-ar="🎮 الريموت المباشر">🎮 Live Remote</button>
+        </div>
+      </div>
+      <div class="hero-img-box"><img src="robot.png" alt="Carbota 3D Rover"/></div>
+    </div>
+    <div class="grid-4">
+      <div class="clean-card"><h3 data-en="⚡ -60.9% Power" data-ar="⚡ توفير 60.9% طاقة">⚡ -60.9% Power</h3><p data-en="Large scale drops load from 115W to 45W." data-ar="النسخة الكبيرة تخفض الاستهلاك من 115 إلى 45 واط.">Large scale drops load from 115W to 45W.</p></div>
+      <div class="clean-card"><h3 data-en="🔋 +155.6% Runtime" data-ar="🔋 +155.6% بطارية">🔋 +155.6% Runtime</h3><p data-en="Extends runtime from 75 mins to 192 mins." data-ar="يطيل العمل من 75 دقيقة إلى 3.2 ساعات.">Extends runtime from 75 mins to 192 mins.</p></div>
+      <div class="clean-card"><h3 data-en="📐 1 Feddan Area" data-ar="📐 تغطية فدان">📐 1 Feddan Area</h3><p data-en="2L CO2 cylinder pushes 242L pesticide (4,200 m²)." data-ar="أسطوانة 2 لتر تدفع 242 لتر مبيد وتغطي فداناً.">2L CO2 cylinder pushes 242L pesticide (4,200 m²).</p></div>
+      <div class="clean-card"><h3 data-en="💰 98.5% Cheaper" data-ar="💰 توفير 98.5%">💰 98.5% Cheaper</h3><p data-en="Prototype ~$75 | Large ~$260 vs $18,000+ rivals." data-ar="المصغر ~75$ والكبير ~260$ مقابل 18,000$.">Prototype ~$75 | Large ~$260 vs $18,000+ rivals.</p></div>
+    </div>
+  </section>
+
+  <section id="mechanism" class="tab-view">
+    <div class="sec-title"><h2 data-en="⚙️ Pneumatic & Bio-Spraying Mechanism" data-ar="⚙️ شرح الميكانيزم الهوائي ونظام الرش">⚙️ Pneumatic & Bio-Spraying Mechanism</h2></div>
+    <div class="mech-timeline">
+      <div class="mech-step"><span class="step-num">01</span><div><h4 data-en="Gas Expansion & Regulation (2 Bars)" data-ar="تمدد الغاز وتنظيم الضغط عند 2 بار">Gas Expansion & Regulation (2 Bars)</h4><p data-en="Liquefied CO2 (~55 bars) expands into gas through a mini-regulator set at 2 bars followed by a check valve." data-ar="يتمدد سائل CO2 لغاز يمر عبر منظم يخفضه إلى 2 بار آمن وثابت يليه صمام عدم رجوع.">Liquefied CO2 (~55 bars) expands into gas through a mini-regulator set at 2 bars followed by a check valve.</p></div></div>
+      <div class="mech-step"><span class="step-num">02</span><div><h4 data-en="Gas Displacement (5.56g CO2 / 1L Liquid)" data-ar="الإزاحة الحجمية (5.56 جرام غاز / 1 لتر)">Gas Displacement (5.56g CO2 / 1L Liquid)</h4><p data-en="By Boyle's Law (P1V1=P2V2), 1L liquid at 2 bars uses 5.56g CO2. A 16g capsule pushes 2.88L (~60 m²); a 2L cylinder pushes 242L (1 Feddan)." data-ar="طبقاً لقانون بويل، 1 لتر مبيد يحتاج 5.56 جرام CO2؛ كبسولة 16 جرام تدفع 2.88 لتر، وأسطوانة 2 لتر تدفع 242 لتر.">By Boyle's Law (P1V1=P2V2), 1L liquid at 2 bars uses 5.56g CO2. A 16g capsule pushes 2.88L (~60 m²); a 2L cylinder pushes 242L (1 Feddan).</p></div></div>
+      <div class="mech-step"><span class="step-num">03</span><div><h4 data-en="Solenoid Valve & Servo Boom" data-ar="صمام السولينويد وذراع السيرفو">Solenoid Valve & Servo Boom</h4><p data-en="A 3W valve (Mini) or 10W Brass Valve (Large) opens for 2s bursts while an MG996R servo sweeps up to 50cm." data-ar="يفتح صمام 3 واط (للمصغر) أو 10 واط نحاس (للكبير) لثانيتين بينما يمسح السيرفو الذراع حتى 50 سم.">A 3W valve (Mini) or 10W Brass Valve (Large) opens for 2s bursts while an MG996R servo sweeps up to 50cm.</p></div></div>
+      <div class="mech-step"><span class="step-num">04</span><div><h4 data-en="Micron Atomization & CO2 Boost" data-ar="التذرير الدقيق والتخصيب الكربوني">Micron Atomization & CO2 Boost</h4><p data-en="0.3mm brass nozzles atomize Neem Oil & K-Soap while released CO2 boosts leaf photosynthesis." data-ar="فوهات 0.3 مم تفتت زيت النيم والصابون البوتاسي بينما يعزز غاز CO2 المنطلق البناء الضوئي.">0.3mm brass nozzles atomize Neem Oil & K-Soap while released CO2 boosts leaf photosynthesis.</p></div></div>
+    </div>
+  </section>
+  <section id="analytics" class="tab-view">
+    <div class="sec-title">
+      <h2 data-en="📊 Interactive Data Analysis & Field Simulator" data-ar="📊 تحليل البيانات التفاعلي ومحاكي المساحات">📊 Interactive Data Analysis & Field Simulator</h2>
+      <p data-en="Adjust area, robot scale, and spray mode to calculate CO2, pesticide, cost, and time." data-ar="غيّر المساحة وحجم الروبوت ونظام الرش لحساب استهلاك الغاز والمبيد والتكلفة والوقت.">Adjust area, robot scale, and spray mode to calculate CO2, pesticide, cost, and time.</p>
+    </div>
+    <div class="sim-controls">
+      <div class="sim-field"><label data-en="Area (m²)" data-ar="المساحة (متر مربع)">Area (m²)</label><input type="number" id="simArea" value="4200" min="10" max="50000" oninput="runDataSim()"/></div>
+      <div class="sim-field"><label data-en="Carbota Scale" data-ar="حجم الروبوت">Carbota Scale</label><select id="simScale" onchange="runDataSim()"><option value="large">Large Scale (2L CO2 / 10L)</option><option value="mini">Mini Prototype (16g CO2 / 300ml)</option></select></div>
+      <div class="sim-field"><label data-en="Spraying Mode" data-ar="نظام الرش">Spraying Mode</label><select id="simSprayMode" onchange="runDataSim()"><option value="targeted">Smart Targeted Spray (-55%)</option><option value="full">Full Coverage</option></select></div>
+    </div>
+    <div class="grid-4" style="margin-bottom:18px">
+      <div class="clean-card"><span style="font-size:0.8rem;color:var(--muted)" data-en="Pesticide Needed" data-ar="المبيد المطلوب">Pesticide Needed</span><h3 id="resLitres">85.1 L</h3></div>
+      <div class="clean-card"><span style="font-size:0.8rem;color:var(--muted)" data-en="CO2 Gas (5.56g/L)" data-ar="غاز CO2 المطلوب">CO2 Gas (5.56g/L)</span><h3 id="resCo2">473 g</h3></div>
+      <div class="clean-card"><span style="font-size:0.8rem;color:var(--muted)" data-en="Operating Cost" data-ar="التكلفة التشغيلية">Operating Cost</span><h3 id="resCost">235 EGP</h3></div>
+      <div class="clean-card"><span style="font-size:0.8rem;color:var(--muted)" data-en="Estimated Time" data-ar="الوقت المتوقع">Estimated Time</span><h3 id="resTime">5.6 Hrs</h3></div>
+    </div>
+    <div class="grid-2">
+      <div class="clean-card">
+        <h3 data-en="Dynamic Cost Comparison (EGP)" data-ar="مقارنة التكلفة (جنيه مصري)">Dynamic Cost Comparison (EGP)</h3>
+        <div class="bar-item"><div class="bar-top"><span data-en="Traditional Chemical + Labor" data-ar="الرش الكيميائي والعمالة">Traditional Chemical + Labor</span><strong id="lblRivalCost">1,800 EGP</strong></div><div class="track"><div class="fill red" style="width:100%">Chemical & Labor</div></div></div>
+        <div class="bar-item"><div class="bar-top"><span data-en="Carbota Organic + CO2" data-ar="كاربوتا العضوي + CO2">Carbota Organic + CO2</span><strong id="lblCarbotaCost">235 EGP</strong></div><div class="track"><div id="barCarbotaCost" class="fill green" style="width:15%">Carbota Saved</div></div></div>
+      </div>
+      <div class="clean-card">
+        <h3 data-en="Static Power Benchmark (Watts)" data-ar="مقارنة الطاقة الثابتة (واط)">Static Power Benchmark (Watts)</h3>
+        <div class="bar-item"><div class="bar-top"><span data-en="Large Electric Pump Rover" data-ar="روبوت كبير بمضخة">Large Electric Pump Rover</span><strong>115.0 W</strong></div><div class="track"><div class="fill gray" style="width:100%">80W Pump + 35W Base (75m)</div></div></div>
+        <div class="bar-item"><div class="bar-top"><span data-en="Carbota Large Scale (10W)" data-ar="كاربوتا الكبير (10W)">Carbota Large Scale (10W)</span><strong>45.0 W (-60.9%)</strong></div><div class="track"><div class="fill green" style="width:39.1%">10W Brass Valve + 35W Base (192m)</div></div></div>
+      </div>
+    </div>
+    <div class="clean-card" style="margin-top:18px">
+      <h3 data-en="💰 Farmer ROI & Payback Period Calculator" data-ar="💰 حاسبة استرداد رأس المال والربحية للمزارع">💰 Farmer ROI & Payback Period Calculator</h3>
+      <div class="ip-row" style="justify-content:flex-start">
+        <label data-en="Farm Size (Feddans):" data-ar="مساحة المزرعة (بالفدان):">Farm Size (Feddans):</label>
+        <input type="number" id="roiFeddans" value="2" min="1" max="100" oninput="calcROI()"/>
+        <label data-en="Sprays / Month:" data-ar="عدد الرشات شهرياً:">Sprays / Month:</label>
+        <input type="number" id="roiSprays" value="2" min="1" max="8" oninput="calcROI()"/>
+      </div>
+      <div class="grid-3">
+        <div class="stat"><span data-en="Monthly Chemical Savings" data-ar="التوفير الشهري">Monthly Chemical Savings</span><strong id="roiMonthly">6,260 EGP</strong></div>
+        <div class="stat"><span data-en="Robot Payback Period" data-ar="فترة استرداد ثمن الروبوت">Robot Payback Period</span><strong id="roiMonths">2.1 Months</strong></div>
+        <div class="stat"><span data-en="Net Annual Profit Boost" data-ar="صافي الربح السنوي الإضافي">Net Annual Profit Boost</span><strong id="roiYearly">+62,120 EGP</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="competitors" class="tab-view">
+    <div class="sec-title"><h2 data-en="🏆 Greenhouse Competitors & SWOT" data-ar="🏆 المنافسون ونقاط القوة والضعف">🏆 Greenhouse Competitors & SWOT</h2></div>
+    <div class="clean-card" style="overflow-x:auto">
+      <table class="comp-table">
+        <thead><tr><th data-en="Feature" data-ar="المعيار">Feature</th><th class="highlight-col" data-en="🌱 Carbota (Large)" data-ar="🌱 كاربوتا الكبير">🌱 Carbota (Large)</th><th>Berg Meto / Qii-Jet</th><th>Icaro X4 (UV)</th></tr></thead>
+        <tbody>
+          <tr><td data-en="Price" data-ar="السعر">Price</td><td class="highlight-col"><strong>~$260 (13,000 EGP)</strong></td><td>$18,000 – $30,000</td><td>$45,000+</td></tr>
+          <tr><td data-en="Tracks" data-ar="المسار">Tracks</td><td class="highlight-col"><strong data-en="Normal Greenhouse Soil" data-ar="تربة الصوبة العادية">Normal Greenhouse Soil</strong></td><td>Requires Pipe Rails</td><td>Paved Tracks</td></tr>
+          <tr><td data-en="Power" data-ar="الطاقة">Power</td><td class="highlight-col"><strong>CO2 (10W Brass Valve)</strong></td><td>80W+ Electric Pumps</td><td>High-Watt UV Lamps</td></tr>
+          <tr><td data-en="Pests" data-ar="الآفات">Pests</td><td class="highlight-col"><strong>Aphids, Whiteflies, Mites</strong></td><td>Insects (Toxic Chemicals)</td><td>Fungi Only</td></tr>
+          <tr><td data-en="CO2 Boost" data-ar="تخصيب CO2">CO2 Boost</td><td class="highlight-col"><strong>✅ Yes</strong></td><td>❌ No</td><td>❌ No</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="swot-grid">
+      <div class="swot-box pro">
+        <h3 style="color:var(--green);margin-bottom:8px" data-en="💪 Our Strengths" data-ar="💪 نقاط القوة عندنا">💪 Our Strengths</h3>
+        <ul>
+          <li data-en="98.5% cheaper (~$260 vs $18,000+) for small & medium farms." data-ar="أرخص بـ 98.5% (~260$ مقابل 18,000$) ومناسب للمزارع الصغيرة.">98.5% cheaper (~$260 vs $18,000+) for small & medium farms.</li>
+          <li data-en="Dual CO2 benefit: zero-pump propulsion + boosts photosynthesis." data-ar="فائدة مزدوجة لـ CO2: دفع بدون مضخة + تسريع البناء الضوئي.">Dual CO2 benefit: zero-pump propulsion + boosts photosynthesis.</li>
+          <li data-en="100% organic Neem & K-Soap with zero toxic harvest residues." data-ar="مبيد عضوي 100% بدون أي بقايا سامة على الثمار.">100% organic Neem & K-Soap with zero toxic harvest residues.</li>
+        </ul>
+      </div>
+      <div class="swot-box con">
+        <h3 style="color:var(--warn);margin-bottom:8px" data-en="⚖️ Rivals' Edge (Our Future Goals)" data-ar="⚖️ ما يميز المنافسين حالياً">⚖️ Rivals' Edge (Our Future Goals)</h3>
+        <ul>
+          <li data-en="200L Tanks: Rivals carry huge tanks; we use 10L to prevent soil compaction." data-ar="خزانات 200 لتر: المنافسون يحملون خزانات ضخمة؛ اخترنا 10 لتر لحماية التربة.">200L Tanks: Rivals carry huge tanks; we use 10L to prevent soil compaction.</li>
+          <li data-en="Auto-Docking: Commercial bots auto-charge; Carbota currently refills manually." data-ar="الشحن الذاتي: المنافسون يعودون للشحن تلقائياً؛ كاربوتا يُعبأ يدوياً حالياً.">Auto-Docking: Commercial bots auto-charge; Carbota currently refills manually.</li>
+          <li data-en="LiDAR Mapping: Rivals use $4k LiDAR; we use low-cost Ultrasonic & ESP32-CAM." data-ar="الليدار: المنافسون يستخدمون ليدار باهظ؛ نستخدم ألتراسونيك وكاميرا اقتصادية.">LiDAR Mapping: Rivals use $4k LiDAR; we use low-cost Ultrasonic & ESP32-CAM.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="eco-doctor" class="tab-view">
+    <div class="sec-title">
+      <h2 data-en="🌿 Interactive Leaf Doctor & UN Sustainability Impact" data-ar="🌿 عيادة النبات التفاعلية وأثر الاستدامة">🌿 Interactive Leaf Doctor & UN Sustainability Impact</h2>
+    </div>
+    <div class="doctor-box">
+      <h3 style="color:var(--green)" data-en="🔬 Interactive Greenhouse Pest Diagnosis" data-ar="🔬 شخّص إصابة نباتك وحدد إعدادات كاربوتا">🔬 Interactive Greenhouse Pest Diagnosis</h3>
+      <p style="font-size:0.88rem;color:var(--muted)" data-en="Select the symptom observed on greenhouse leaves:" data-ar="اختر الأعراض الظاهرة على أوراق النبات داخل الصوبة:">Select the symptom observed on greenhouse leaves:</p>
+      <div class="symptom-btns">
+        <button class="sym-btn active-box" onclick="diagnosePest('aphids', this)" data-en="Curled Leaves & Sticky Honeydew" data-ar="تجعد الأوراق وندوة عسلية لزجة">Curled Leaves & Sticky Honeydew</button>
+        <button class="sym-btn" onclick="diagnosePest('whitefly', this)" data-en="Tiny White Insects Flying Under Leaves" data-ar="حشرات بيضاء صغيرة أسفل الأوراق">Tiny White Insects Flying Under Leaves</button>
+        <button class="sym-btn" onclick="diagnosePest('mites', this)" data-en="Yellow Speckles & Fine Webbing" data-ar="بقع صفراء وخيوط عنكبوتية دقيقة">Yellow Speckles & Fine Webbing</button>
+      </div>
+      <div id="rxOutput" class="rx-result">
+        <strong>Diagnosis: Aphids (حشرة المنّ)</strong><br/>
+        • <strong>Bio-Recipe:</strong> 0.5% Pure Neem Oil + 1.0% Potassium Soap.<br/>
+        • <strong>Carbota Setting:</strong> Set Servo Boom sweep to <strong>20°–65°</strong> to coat undersides of young shoots.
+      </div>
+    </div>
+    <h3 style="color:var(--green);margin-bottom:8px" data-en="🌍 Alignment with UN Sustainable Development Goals (SDGs)" data-ar="🌍 توافق المشروع مع أهداف الأمم المتحدة للتنمية المستدامة">🌍 Alignment with UN Sustainable Development Goals (SDGs)</h3>
+    <div class="sdg-grid">
+      <div class="sdg-card"><span class="sdg-num">SDG 2 • Zero Hunger</span><p style="font-size:0.85rem;color:var(--muted)" data-en="Boosts greenhouse crop yield by 15–25% via CO2 enrichment and pest protection." data-ar="زيادة إنتاجية الصوب بنسبة 15-25% عبر التخصيب الكربوني وحماية المحصول.">Boosts greenhouse crop yield by 15–25% via CO2 enrichment and pest protection.</p></div>
+      <div class="sdg-card"><span class="sdg-num">SDG 3 • Good Health</span><p style="font-size:0.85rem;color:var(--muted)" data-en="Eliminates toxic chemical pesticide exposure for farmers and consumers." data-ar="حماية المزارعين والمستهلكين من التسمم بالمبيدات الكيميائية.">Eliminates toxic chemical pesticide exposure for farmers and consumers.</p></div>
+      <div class="sdg-card"><span class="sdg-num">SDG 7 • Clean Energy</span><p style="font-size:0.85rem;color:var(--muted)" data-en="Cuts robotic spraying power consumption by 87.5% using pneumatic propulsion." data-ar="خفض استهلاك طاقة الرش بنسبة 87.5% عبر الدفع الهوائي.">Cuts robotic spraying power consumption by 87.5% using pneumatic propulsion.</p></div>
+      <div class="sdg-card"><span class="sdg-num">SDG 13 • Climate Action</span><p style="font-size:0.85rem;color:var(--muted)" data-en="Repurposes CO2 as both clean propellant and plant carbon nutrient." data-ar="إعادة تدوير غاز CO2 كدافع نظيف ومغذٍ للنباتات داخل الصوبة.">Repurposes CO2 as both clean propellant and plant carbon nutrient.</p></div>
+    </div>
+    <div class="climate-alert">
+      <strong data-en="☀️ Upper Egypt & Hot Climate Spraying Advisor (e.g., Qena):" data-ar="☀️ دليل الرش الذكي للأجواء الحارة (مثل صعيد مصر وقنا):">☀️ Upper Egypt & Hot Climate Spraying Advisor (e.g., Qena):</strong>
+      <span data-en="High solar radiation between 10:00 AM and 4:00 PM can cause Neem Oil leaf burn. Carbota is optimized for automated dawn (05:30–08:00 AM) and sunset patrols when stomata are open for maximum CO2 absorption." data-ar="أشعة الشمس القوية بين 10 صباحاً و4 عصراً قد تسبب احتراق الأوراق مع زيت النيم؛ لذا يُبرمج كاربوتا للعمل التلقائي وقت الفجر (5:30–8:00 صباحاً) أو الغروب حيث تكون ثغور النبات مفتوحة لامتصاص CO2 بأعلى كفاءة.">High solar radiation between 10:00 AM and 4:00 PM can cause Neem Oil leaf burn. Carbota is optimized for automated dawn (05:30–08:00 AM) and sunset patrols when stomata are open for maximum CO2 absorption.</span>
+    </div>
+  </section>
+
+  <section id="future" class="tab-view">
+    <div class="sec-title"><h2 data-en="🚀 Future Engineering Roadmap" data-ar="🚀 خطة التطوير المستقبلية">🚀 Future Engineering Roadmap</h2></div>
+    <div class="grid-2">
+      <div class="future-card"><span class="phase-tag">Phase 1 • AI</span><h4 data-en="1. Edge-AI Pest Detection" data-ar="1. الذكاء الاصطناعي لاكتشاف الآفات">1. Edge-AI Pest Detection</h4><p data-en="Train TinyML model on ESP32-S3 to detect infected leaves and spray only diseased spots." data-ar="تدريب نموذج ذكاء اصطناعي لتمييز الأوراق المصابة ورشها موضعياً فقط.">Train TinyML model on ESP32-S3 to detect infected leaves and spray only diseased spots.</p></div>
+      <div class="future-card"><span class="phase-tag">Phase 2 • Solar</span><h4 data-en="2. Solar Auto-Docking Station" data-ar="2. محطة شحن وتعبئة شمسية">2. Solar Auto-Docking Station</h4><p data-en="Solar base station for automatic magnetic battery charging and liquid refilling." data-ar="قاعدة شحن شمسية عند مدخل الصوبة للشحن التلقائي وإعادة تعبئة الخزان.">Solar base station for automatic magnetic battery charging and liquid refilling.</p></div>
+      <div class="future-card"><span class="phase-tag">Phase 3 • Swarm</span><h4 data-en="3. Multi-Rover Swarm Fleet" data-ar="3. العمل بنظام الأسراب (Swarm)">3. Multi-Rover Swarm Fleet</h4><p data-en="Synchronize 3 Carbota units via Wi-Fi Mesh to cover 1 Feddan in under 110 minutes." data-ar="تشغيل 3 روبوتات معاً لتغطية فدان كامل في أقل من ساعتين.">Synchronize 3 Carbota units via Wi-Fi Mesh to cover 1 Feddan in under 110 minutes.</p></div>
+      <div class="future-card"><span class="phase-tag">Phase 4 • IoT</span><h4 data-en="4. Closed-Loop CO2 Sensors" data-ar="4. حساسات قياس تركيز CO2">4. Closed-Loop CO2 Sensors</h4><p data-en="Add NDIR CO2 & DHT22 sensors to track greenhouse carbon enrichment levels live." data-ar="إضافة حساسات قياس تركيز ثاني أكسيد الكربون والرطوبة داخل الصوبة.">Add NDIR CO2 & DHT22 sensors to track greenhouse carbon enrichment levels live.</p></div>
+    </div>
+  </section>
+  <section id="remote" class="tab-view">
+    <div class="remote-header">
+      <h2 data-en="🎮 Carbota Live Remote" data-ar="🎮 ريموت كاربوتا المباشر">🎮 Carbota Live Remote</h2>
+      <div id="statusBadge" class="badge standby"><span class="dot"></span><span id="statusText" data-en="Waiting to Put Carbota Prototype..." data-ar="في انتظار توصيل البروتوتايب...">Waiting to Put Carbota Prototype...</span></div>
+    </div>
+    <div class="remote-layout">
+      <div class="clean-card">
+        <div class="card-head"><h3 data-en="📷 ESP32-CAM Feed" data-ar="📷 بث الكاميرا">📷 ESP32-CAM Feed</h3><button class="btn-estop" onclick="emergencyStop()" data-en="🛑 E-STOP" data-ar="🛑 إيقاف">🛑 E-STOP</button></div>
+        <div class="viewport">
+          <img id="liveVideo" alt="Stream"/>
+          <canvas id="roverSimCanvas"></canvas>
+          <button id="simExitBtn" class="sim-exit-btn" onclick="toggleRoverSim(false)">✖ Exit Simulation</button>
+          <div id="standbyOverlay" class="standby-msg">
+            <div class="spinner"></div>
+            <h4 data-en="⏳ Waiting to Put the Carbota Prototype" data-ar="⏳ في انتظار توصيل بروتوتايب كاربوتا">⏳ Waiting to Put the Carbota Prototype</h4>
+            <p data-en="Enter rover IP to bind live video or run 2D Rover Simulation." data-ar="أدخل رقم الـ IP للربط المباشر أو شغّل محاكاة حركة الروبوت.">Enter rover IP to bind live video or run 2D Rover Simulation.</p>
+            <div class="ip-row">
+              <input type="text" id="roverIp" value="192.168.4.1"/>
+              <button class="btn-solid" onclick="connectRover(this)" data-en="Bind Prototype" data-ar="ربط">Bind Prototype</button>
+              <button class="btn-soft" onclick="toggleRoverSim(true)" data-en="🚜 Run 2D Sim" data-ar="🚜 تشغيل المحاكاة">🚜 Run 2D Sim</button>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="stat"><span data-en="16g CO2 Reserve" data-ar="مخزون CO2">16g CO2 Reserve</span><strong><span id="co2Pct">100</span>% (<span id="burstCount">160</span>)</strong><div class="mini-track"><div id="co2Fill" class="mini-fill"></div></div></div>
+          <div class="stat"><span data-en="300ml Tank" data-ar="خزان المبيد">300ml Tank</span><strong><span id="tankVol">300</span> ml</strong><div class="mini-track"><div id="tankFill" class="mini-fill"></div></div></div>
+        </div>
+      </div>
+      <div class="clean-card">
+        <div class="mode-bar">
+          <button id="tabManual" class="mode-btn active-box" onclick="switchMode('manual', this)" data-en="Manual" data-ar="يدوي">Manual</button>
+          <button id="tabAuto" class="mode-btn" onclick="switchMode('auto', this)" data-en="Autonomous" data-ar="ذاتي">Autonomous</button>
+        </div>
+        <div class="dpad">
+          <div></div><button class="dir-btn" data-dir="forward">▲<small>FWD</small></button><div></div>
+          <button class="dir-btn" data-dir="left">◀<small>LEFT</small></button><button class="stop-btn" onclick="dispatchCommand('move?dir=stop', this)">STOP</button><button class="dir-btn" data-dir="right">▶<small>RIGHT</small></button>
+          <div></div><button class="dir-btn" data-dir="backward">▼<small>REV</small></button><div></div>
+        </div>
+        <div class="slider-box">
+          <div class="bar-top"><span data-en="🦾 Boom Angle" data-ar="🦾 ارتفاع الذراع">🦾 Boom Angle</span><strong><span id="servoDeg">30</span>° (~<span id="armHeight">22</span> cm)</strong></div>
+          <input type="range" id="armSlider" min="0" max="90" value="30" oninput="setArmAngle(this.value)"/>
+        </div>
+        <button id="sprayTrigger" class="btn-solid full-w" onclick="fireSpray(this)" data-en="💨 Fire CO2 Mist (2s)" data-ar="💨 إطلاق رذاذ CO2">💨 Fire CO2 Mist (2s)</button>
+        <button class="btn-soft full-w" onclick="resetSupplies(this)" data-en="🔄 Refill Supplies" data-ar="🔄 إعادة تعبئة">🔄 Refill Supplies</button>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top:16px">
+      <div class="clean-card">
+        <h3 data-en="🧪 Bio-Pesticide Calculator" data-ar="🧪 حاسبة المبيد">🧪 Bio-Pesticide Calculator</h3>
+        <div class="ip-row"><label data-en="Volume (ml):" data-ar="الحجم (مل):">Volume (ml):</label><input type="number" id="mixVol" value="300" oninput="calcFormula()"/></div>
+        <div class="grid-3">
+          <div class="stat"><span data-en="Neem (0.5%)" data-ar="نيم">Neem (0.5%)</span><strong id="outNeem">1.5 ml</strong></div>
+          <div class="stat"><span data-en="K-Soap (1%)" data-ar="صابون">K-Soap (1%)</span><strong id="outSoap">3.0 ml</strong></div>
+          <div class="stat"><span data-en="Water" data-ar="ماء">Water</span><strong id="outWater">295.5 ml</strong></div>
+        </div>
+      </div>
+      <div class="clean-card"><h3 data-en="📟 Command Log" data-ar="📟 سجل الأوامر">📟 Command Log</h3><div id="consoleLog" class="console"></div></div>
+    </div>
+  </section>
+
+  <section id="poster-qr" class="tab-view">
+    <div class="qr-wrapper">
+      <div class="qr-white"><img src="qr.png" width="180" height="180" alt="Carbota QR Code"/></div>
+      <div class="qr-text">
+        <h2 data-en="📱 Scan to Launch Carbota Web" data-ar="📱 امسح الكود لتشغيل الموقع">📱 Scan to Launch Carbota Web</h2>
+        <p data-en="Save your Canva QR code as qr.png inside the project folder." data-ar="احفظ صورة الـ QR من كانفا باسم qr.png داخل مجلد المشروع.">Save your Canva QR code as qr.png inside the project folder.</p>
+        <a href="qr.png" download="Carbota-Poster-QR.png" class="btn-solid" data-en="⬇️ Download QR PNG" data-ar="⬇️ تحميل صورة QR">⬇️ Download QR PNG</a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
