@@ -102,7 +102,19 @@ function resetSupplies(b){flashActiveBox(b);burstsLeft=160;tankLeft=300;document
 function emergencyStop(){dispatchCommand("estop");writeLog("E-STOP!");}
 function calcFormula(){const v=parseFloat(document.getElementById("mixVol").value)||0;document.getElementById("outNeem").textContent=(v*0.005).toFixed(1)+" ml";document.getElementById("outSoap").textContent=(v*0.01).toFixed(1)+" ml";document.getElementById("outWater").textContent=(v-v*0.015).toFixed(1)+" ml";}
 function toggleTheme(b){document.body.classList.toggle("dark-mode");const d=document.body.classList.contains("dark-mode");b.classList.toggle("active-box",d);b.textContent=currentLang==="en"?(d?"☀️ Light":"🌙 Dark"):(d?"☀️ نهاري":"🌙 ليلي");}
-function toggleLang(b){currentLang=currentLang==="en"?"ar":"en";document.documentElement.lang=currentLang;document.documentElement.dir=currentLang==="ar"?"rtl":"ltr";b.textContent=currentLang==="en"?"عربي":"English";b.classList.toggle("active-box",currentLang==="ar");document.querySelectorAll("[data-en]").forEach(e=>{e.textContent=e.getAttribute("data-"+currentLang);});}
+function toggleLang(b) {
+  currentLang = currentLang === "en" ? "ar" : "en";
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+  b.textContent = currentLang === "en" ? "عربي" : "English";
+  b.classList.toggle("active-box", currentLang === "ar");
+  document.querySelectorAll("[data-en]").forEach(e => {
+    if (e.children.length === 0) {
+      e.textContent = e.getAttribute("data-" + currentLang);
+    }
+  });
+}
+
 function diagnosePest(type, btnEl) {
   document.querySelectorAll(".sym-btn").forEach((b) => b.classList.remove("active-box"));
   if (btnEl) btnEl.classList.add("active-box");
