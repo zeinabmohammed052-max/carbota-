@@ -235,16 +235,26 @@
     </div>
   </section>
 
-  <section id="poster-qr" class="tab-view">
+    <section id="poster-qr" class="tab-view">
     <div class="qr-wrapper">
-      <div class="qr-white"><img src="qr.png" width="180" height="180" alt="Carbota QR Code"/></div>
+      <div class="qr-white">
+        <img src="qr.png" width="220" height="220" alt="Carbota QR Code" style="display:block; border-radius:8px;"/>
+      </div>
       <div class="qr-text">
         <h2 data-en="📱 Scan to Launch Carbota Web" data-ar="📱 امسح الكود لتشغيل الموقع">📱 Scan to Launch Carbota Web</h2>
-        <p data-en="Save your Canva QR code as qr.png inside the project folder." data-ar="احفظ صورة الـ QR من كانفا باسم qr.png داخل مجلد المشروع.">Save your Canva QR code as qr.png inside the project folder.</p>
-        <a href="qr.png" download="Carbota-Poster-QR.png" class="btn-solid" data-en="⬇️ Download QR PNG" data-ar="⬇️ تحميل صورة QR">⬇️ Download QR PNG</a>
+        <p data-en="Scan this QR code with your phone camera or click the button below to download and print it on your poster." 
+           data-ar="امسح هذا الكود بكاميرا هاتفك أو اضغط على الزر بالأسفل لتحميله وطباعته على البوستر.">
+          Scan this QR code with your phone camera or click the button below to download and print it on your poster.
+        </p>
+        <div class="ip-row" style="justify-content:flex-start; margin-top:12px;">
+          <a href="qr.png" download="Carbota-Poster-QR.png" class="btn-solid" data-en="⬇️ Download QR PNG" data-ar="⬇️ تحميل صورة QR">
+            ⬇️ Download QR PNG
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
 </main>
 <script src="app.js"></script>
 </body>
